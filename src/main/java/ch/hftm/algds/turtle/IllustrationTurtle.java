@@ -31,6 +31,13 @@ public class IllustrationTurtle extends Application {
 		drawWithTurtle(gc);
 	}
 
+	private void drawPolygon(Turtle turtle, int sides, double length) {
+		for (int i = 0; i < sides; i++) {
+			turtle.forward(length);
+			turtle.left(360 / sides);
+		}
+	}
+
 	private void drawWithTurtle(GraphicsContext gc) {
 		// Turtle-Objekt erzeugen
 		Turtle turtle = new Turtle(gc, 180, 300, 0.1);
@@ -38,15 +45,22 @@ public class IllustrationTurtle extends Application {
 		// Turtle bewegen
 		turtle.setHome();
 
-		double length = 50;
-		double sides = 3;
+		final double length = 50;
 
-		for (int a = 0; a < 10; a++) {
-			for (int i = 0; i < sides; i++) {
-				turtle.forward(length);
-				turtle.left(360 / sides);
-			}
-			sides++;
+		// for (int a = 0; a < 10; a++) {
+		// drawPolygon(turtle, sides, length);
+		// sides++;
+		// }
+
+		double maxdegree = 360;
+		int counter = 30;
+		int shape = 4;
+
+		double sequence = maxdegree / counter;
+
+		for (int i = 0; i < counter; i++) {
+			drawPolygon(turtle, shape, length);
+			turtle.right(sequence);
 		}
 
 		// Ablauf darstellen
