@@ -33,12 +33,21 @@ public class IllustrationTurtle extends Application {
 
 	private void drawWithTurtle(GraphicsContext gc) {
 		// Turtle-Objekt erzeugen
-		Turtle turtle = new Turtle(gc, 40, 100, 0.1);
+		Turtle turtle = new Turtle(gc, 180, 300, 0.1);
 
 		// Turtle bewegen
-		turtle.forward(40);
-		turtle.left(90);
-		turtle.forward(40);
+		turtle.setHome();
+
+		double length = 50;
+		double sides = 3;
+
+		for (int a = 0; a < 10; a++) {
+			for (int i = 0; i < sides; i++) {
+				turtle.forward(length);
+				turtle.left(360 / sides);
+			}
+			sides++;
+		}
 
 		// Ablauf darstellen
 		turtle.startJourney();
