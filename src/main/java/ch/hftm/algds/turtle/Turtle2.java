@@ -7,7 +7,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
 
-public class IllustrationTurtle extends Application {
+public class Turtle2 extends Application {
 
 	public static void start(String[] args) {
 		launch(args);
